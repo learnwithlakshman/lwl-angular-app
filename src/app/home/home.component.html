@@ -1,0 +1,31 @@
+<div class="row align-items-start mt-2">
+   
+    <div class="col">
+        <table class="table table-striped">
+            <thead>
+                <tr>
+                    <th>Name</th>
+                    <th>Email</th>
+                    <th>More...</th>
+                </tr>
+            </thead>
+            <tbody>
+                <tr *ngFor="let contact of contacts">
+                    <td>{{contact.name}}</td>
+                    <td>{{contact.email}}</td>
+                    <td><button (click)="showProfile(contact.email)">More...</button></td>
+                </tr>
+            </tbody>
+        </table>
+
+    </div>
+    <div class="col">
+       <div>
+            <app-viewcontact  *ngIf="selectedContact" [selectedContact]="selectedContact"></app-viewcontact>
+       </div>
+
+        <div *ngIf="!selectedContact">
+            <p>Please click on more details to view complete profile of the user</p>
+        </div>
+    </div>
+</div>

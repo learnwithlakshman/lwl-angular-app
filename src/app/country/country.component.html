@@ -1,0 +1,27 @@
+<div class="row mt-2">
+
+        <div class="col-md-8 offset-md-2">
+                
+                <table *ngIf="countryArr.length != 0" class="table">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Capital</th>
+                            <th>Population</th>
+                            <th>Flag</th>
+                            
+                        </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let country of countryArr">
+                            <td>{{country.name | uppercase}}</td>
+                            <td>{{country.capital}}</td>
+                            <td>{{country.population | number}}</td>
+                            <td><img src={{country.flag}} height="30px" width="50px"></td>
+                        </tr>
+                    </tbody>
+                </table>
+
+        </div>
+
+</div>

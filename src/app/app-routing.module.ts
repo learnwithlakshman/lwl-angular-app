@@ -1,3 +1,4 @@
+import { CountryComponent } from './country/country.component';
 import { BasicsComponent } from './basics/basics.component';
 import { CbookComponent } from './cbook/cbook.component';
 import { TodoComponent } from './todo/todo.component';
@@ -27,6 +28,10 @@ const routes: Routes = [
     {
       path:'cbook',
       component: CbookComponent
+    },
+    {
+      path:'country',
+      component: CountryComponent
     }
 
 ];

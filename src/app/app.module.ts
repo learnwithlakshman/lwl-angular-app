@@ -10,6 +10,8 @@ import { TodoComponent } from './todo/todo.component';
 import { ViewcontactComponent } from './home/viewcontact/viewcontact.component';
 import { BasicsComponent } from './basics/basics.component';
 import { FormsModule } from '@angular/forms';
+import { CountryComponent } from './country/country.component';
+import {HttpClientModule} from '@angular/common/http';
 
 @NgModule({
   declarations: [
@@ -19,12 +21,15 @@ import { FormsModule } from '@angular/forms';
     CbookComponent,
     TodoComponent,
     ViewcontactComponent,
-    BasicsComponent
+    BasicsComponent,
+    CountryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule
+    FormsModule,
+    HttpClientModule
+    
   ],
   providers: [],
   bootstrap: [AppComponent]

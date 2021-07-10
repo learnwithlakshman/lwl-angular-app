@@ -12,6 +12,8 @@ import { BasicsComponent } from './basics/basics.component';
 import { FormsModule } from '@angular/forms';
 import { CountryComponent } from './country/country.component';
 import {HttpClientModule} from '@angular/common/http';
+import { IplComponent } from './ipl/ipl.component';
+import { Ng2GoogleChartsModule } from 'ng2-google-charts';
 
 @NgModule({
   declarations: [
@@ -22,13 +24,15 @@ import {HttpClientModule} from '@angular/common/http';
     TodoComponent,
     ViewcontactComponent,
     BasicsComponent,
-    CountryComponent
+    CountryComponent,
+    IplComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
     FormsModule,
-    HttpClientModule
+    HttpClientModule,
+    Ng2GoogleChartsModule
     
   ],
   providers: [],

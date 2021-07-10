@@ -1,3 +1,4 @@
+import { IplComponent } from './ipl/ipl.component';
 import { CountryComponent } from './country/country.component';
 import { BasicsComponent } from './basics/basics.component';
 import { CbookComponent } from './cbook/cbook.component';
@@ -32,6 +33,10 @@ const routes: Routes = [
     {
       path:'country',
       component: CountryComponent
+    },
+    {
+      path:'iplstat',
+      component: IplComponent
     }
 
 ];

@@ -1,0 +1,22 @@
+<div class="row">
+
+        <div class="col">
+            <div *ngIf="teamStat">
+                   
+                <ul>
+                    <li *ngFor="let team of teamStat" (click)="playerData(team.teamName)">{{team.teamName}}</li>
+                </ul>
+
+            </div>
+            <div *ngIf="players">
+                <ul>
+                    <li *ngFor="let player of players">{{player.name}}</li>
+                </ul>
+            </div>
+        </div>
+        <div class="col">
+            <google-chart [data]="columnChart"></google-chart>
+            <google-chart [data]="pieChart"></google-chart>
+        </div>
+
+</div>

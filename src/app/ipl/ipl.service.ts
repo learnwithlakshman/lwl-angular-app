@@ -1,3 +1,4 @@
+import { RoleCount } from './model/rolecount.model';
 import { Player } from './model/player.model';
 import { Observable } from 'rxjs';
 import { TeamCountAndAmount } from './model/teamstat.model';
@@ -9,6 +10,7 @@ import { Injectable } from '@angular/core';
 })
 export class IplService {
  
+ 
 
   base_url = "http://localhost:8080/iplstat/";
   constructor(private http:HttpClient) { }
@@ -18,5 +20,9 @@ export class IplService {
   }
   getPlayers(teamName: string):Observable<Player[]> {
     return this.http.get<Player[]>(`${this.base_url}api/ipl/${teamName}`)
+  }
+
+  getRoleAmountAndCount(teamName: string) :Observable<RoleCount[]>{
+    return this.http.get<RoleCount[]>(`${this.base_url}api/ipl/roleamountandcount/${teamName}`);
   }
 }

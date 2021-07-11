@@ -1,22 +1,50 @@
-<div class="row">
+<div class="row mt-2">
 
         <div class="col">
             <div *ngIf="teamStat">
                    
-                <ul>
-                    <li *ngFor="let team of teamStat" (click)="playerData(team.teamName)">{{team.teamName}}</li>
-                </ul>
+            
+                    <div class="row">
+                        <div class="col-md-4" *ngFor="let team of teamStat">
+                          <div class="card mt-2">
+                            <div class="card-body">
+                              <h5 class="card-title">{{team.teamName}} - {{team.count | number}}(players)</h5>
+                              <p class="card-text">{{team.amount | currency:'INR'}} </p>
+                                <a  class="btn btn-primary" (click)="playerData(team.teamName)">More...</a>
+                            </div>
+                          </div>
+                        </div>
+                    </div>
+               
 
             </div>
-            <div *ngIf="players">
-                <ul>
-                    <li *ngFor="let player of players">{{player.name}}</li>
-                </ul>
+            <div *ngIf="players && players.length > 0" class="mt-4">
+                <div class="py-1 text-center bg-primary text-white">Player Details of : <strong>{{selectedTeam}}</strong> </div>
+                <table class="table">
+                    <thead>
+                      <tr>
+                        <th scope="col">#</th>
+                        <th scope="col">Name</th>
+                        <th scope="col">Role</th>
+                        <th scope="col">Country</th>
+                        <th scope="col">Price</th>
+                      </tr>
+                    </thead>
+                    <tbody>
+                        <tr *ngFor="let player of players;index as i">
+                            <td>{{i+1}}</td>
+                            <td>{{player.name}}</td>
+                            <td>{{player.role}}</td>
+                            <td>{{player.country}}</td>
+                            <td>{{player.price | currency:'INR'}}</td>
+                        </tr>
+                    </tbody>
+                </table>
             </div>
         </div>
         <div class="col">
-            <google-chart [data]="columnChart"></google-chart>
-            <google-chart [data]="pieChart"></google-chart>
+            <google-chart *ngIf="columnChart" [data]="columnChart" (chartSelect)='select($event)'></google-chart>
+            <google-chart *ngIf="pieChart && pieChartData.length > 0" [data]="pieChart" (chartSelect)='selectPie($event)'></google-chart>
         </div>
 
 </div>

@@ -11,9 +11,8 @@ import { ViewcontactComponent } from './home/viewcontact/viewcontact.component';
 import { BasicsComponent } from './basics/basics.component';
 import { FormsModule } from '@angular/forms';
 import { CountryComponent } from './country/country.component';
-import {HttpClientModule} from '@angular/common/http';
-import { IplComponent } from './ipl/ipl.component';
-import { Ng2GoogleChartsModule } from 'ng2-google-charts';
+import { HttpClientModule, HTTP_INTERCEPTORS } from '@angular/common/http';
+
 
 @NgModule({
   declarations: [
@@ -24,18 +23,17 @@ import { Ng2GoogleChartsModule } from 'ng2-google-charts';
     TodoComponent,
     ViewcontactComponent,
     BasicsComponent,
-    CountryComponent,
-    IplComponent
+    CountryComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule,
-    FormsModule,
-    HttpClientModule,
-    Ng2GoogleChartsModule
-    
+    FormsModule
+      
   ],
-  providers: [],
+  providers: [
+   
+  ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }

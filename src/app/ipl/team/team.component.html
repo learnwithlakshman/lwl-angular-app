@@ -1,0 +1,13 @@
+<div class="mt-1 text-center">
+    <a class="btn btn-primary" routerLink="/iplstat/teamstat">Team Stat</a> | <a class="btn btn-primary" routerLink="/iplstat/amountstat">Amout Stat</a>
+ </div>
+<div class="row mt-2">
+
+        <div class="col-md-6 offset-md-3">
+            <select class="form-control" (change)="getTeamStat($event)">
+                <option value="">Select team</option>
+                <option *ngFor="let name of teamNames">{{name}}</option>
+            </select>
+        </div>
+
+</div>

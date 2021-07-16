@@ -36,7 +36,7 @@ const routes: Routes = [
     },
     {
       path:'iplstat',
-      component: IplComponent
+      loadChildren: () => import('./ipl/ipl.module').then(m=>m.IplModule)
     }
 
 ];
